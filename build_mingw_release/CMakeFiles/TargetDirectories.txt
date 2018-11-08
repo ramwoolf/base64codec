@@ -1,5 +1,0 @@
-C:/Users/AlSVolkov/My Documents/Trainings/base64codec/build_mingw_release/CMakeFiles/edit_cache.dir
-C:/Users/AlSVolkov/My Documents/Trainings/base64codec/build_mingw_release/CMakeFiles/rebuild_cache.dir
-C:/Users/AlSVolkov/My Documents/Trainings/base64codec/build_mingw_release/src/CMakeFiles/base64codec.dir
-C:/Users/AlSVolkov/My Documents/Trainings/base64codec/build_mingw_release/src/CMakeFiles/edit_cache.dir
-C:/Users/AlSVolkov/My Documents/Trainings/base64codec/build_mingw_release/src/CMakeFiles/rebuild_cache.dir

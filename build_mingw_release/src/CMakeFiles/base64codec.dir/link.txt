@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E remove -f CMakeFiles\base64codec.dir/objects.a
-C:\tools\mingw\mingw32\bin\ar.exe cr CMakeFiles\base64codec.dir/objects.a @CMakeFiles\base64codec.dir\objects1.rsp
-C:\tools\mingw\mingw32\bin\g++.exe  -std=c++14 -static-libgcc -static-libstdc++  -O2 -Wl,-s -Wl,--gc-section -Wl,--enable-stdcall-fixup -Wall -Wextra -pedantic -Wconversion -Wsign-conversion -Winit-self -Wunreachable-code   -Wl,--whole-archive CMakeFiles\base64codec.dir/objects.a -Wl,--no-whole-archive  -o base64codec.exe -Wl,--out-implib,libbase64codec.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\base64codec.dir\linklibs.rsp
