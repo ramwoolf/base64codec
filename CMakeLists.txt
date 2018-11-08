@@ -24,15 +24,15 @@ if(MSVC)
     set(FLAGS_RELEASE "/O2 /MT")
     set(FLAGS_DEBUG   "/wd4996 /Od /Zi /MTd")
 else()
-    set(CXX_FLAGS "${APP_DEFS} -std=c++14 -static-libgcc -static-libstdc++" )
+    set(CXX_FLAGS "${APP_DEFS} -std=c++14" )
     set(CXX_FLAGS "${CXX_FLAGS} " )
 
     set(C_FLAGS "${APP_DEFS} -std=c99")
     set(C_FLAGS "${C_FLAGS} -fdata-sections -ffunction-sections")
     set(WARN_FLAGS "-Wall -Wextra -pedantic -Wconversion -Wsign-conversion -Winit-self -Wunreachable-code")
 
-    set(FLAGS_RELEASE "-O2 -Wl,-s -Wl,--gc-section -Wl,--enable-stdcall-fixup")
-    set(FLAGS_DEBUG   "-O0 -g -Wl,--enable-stdcall-fixup")
+    set(FLAGS_RELEASE "-O2")
+    set(FLAGS_DEBUG   "-O0 -g")
 endif()
 
 set(CMAKE_C_FLAGS_RELEASE    "${C_FLAGS} ${FLAGS_RELEASE} ${WARN_FLAGS}")
@@ -45,4 +45,8 @@ if(NOT DEFINED LIB_DIR OR LIB_DIR STREQUAL "")
     string(REPLACE "\\" "/" LIB_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 endif()
 
+set(INSTALL_NAME_DIR ${CMAKE_CURRENT_SOURCE_DIR}/bin)
+
 add_subdirectory(src)
+
+
