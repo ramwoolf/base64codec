@@ -22,10 +22,14 @@ void encode_base64(const uint8_t* original_str, uint8_t* encoded_str) {
 
     while (original_str[origin_str_index] != '\0') {
         tail_size += ascii_byte_size - base64_char_size;
-        auto prefix = bit_sextet_prefix << tail_size;
+        std::cout << (unsigned int)tail_size << std::endl;
+        auto prefix = bit_sextet_prefix << (ascii_byte_size - tail_size);
         auto postfix = original_str[origin_str_index] >> tail_size;
+        std::cout << (unsigned int) prefix << ", " << (unsigned int)postfix << std::endl;
         char_table_index = prefix + postfix;
         bit_sextet_prefix = original_str[origin_str_index] & ((1u << tail_size) - 1u);
+        std::cout << "bit_sextet_prefix " << (unsigned int)bit_sextet_prefix << std::endl;
+        std::cout << "char_table_index" << (unsigned int)char_table_index << std::endl;
         encoded_str[encoded_str_index] = CHAR_TABLE[char_table_index];
         ++origin_str_index;
         ++encoded_str_index;
@@ -33,6 +37,7 @@ void encode_base64(const uint8_t* original_str, uint8_t* encoded_str) {
             encoded_str[encoded_str_index] = CHAR_TABLE[bit_sextet_prefix];
             tail_size = 0u;
             ++encoded_str_index;
+            bit_sextet_prefix = 0u;
         }
     }
     encoded_str[encoded_str_index] = '\0';
@@ -45,7 +50,7 @@ void decode_base64(const uint8_t* encoded_str, uint8_t* original_str) {
 
 int main(int argc, char**argv)
 {
-    uint8_t original_str[] {"Man"};
+    uint8_t original_str[] {"ManMan"};
     uint8_t encoded_str[10] {'\0'};
     encode_base64(original_str, encoded_str);
     std::cout << encoded_str << std::endl;
