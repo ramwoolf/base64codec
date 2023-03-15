@@ -24,7 +24,7 @@ if(MSVC)
     set(FLAGS_RELEASE "/O2 /MT")
     set(FLAGS_DEBUG   "/wd4996 /Od /Zi /MTd")
 else()
-    set(CXX_FLAGS "${APP_DEFS} -std=c++14" )
+    set(CXX_FLAGS "${APP_DEFS} -std=c++17" )
     set(CXX_FLAGS "${CXX_FLAGS} " )
 
     set(C_FLAGS "${APP_DEFS} -std=c99")
